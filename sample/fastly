@@ -1,0 +1,2482 @@
+capturing events (61750)
+
+Capture
+Export
+Import
+Proxy
+Events
+Timeline
+DNS
+Sockets
+Alt-Svc
+HTTP/2
+QUIC
+SDCH
+Cache
+Modules
+HSTS
+Bandwidth
+Prerender
+
+(?)	
+type:HTTP2_SESSION is:active
+10 of 16017
+	ID	Source Type	Description
+	123427	HTTP2_SESSION	10.client-channel.google.com:443 (DIRECT)
+	127789	HTTP2_SESSION	clients6.google.com:443 (DIRECT)
+	134062	HTTP2_SESSION	clients6.google.com:443 (DIRECT)
+	138844	HTTP2_SESSION	s2.googleusercontent.com:443 (DIRECT)
+	138919	HTTP2_SESSION	www.google.com:443 (DIRECT)
+	138951	HTTP2_SESSION	www.fastly.com:443 (DIRECT)
+	139109	HTTP2_SESSION	fonts.googleapis.com:443 (DIRECT)
+	139245	HTTP2_SESSION	fonts.gstatic.com:443 (DIRECT)
+	139364	HTTP2_SESSION	secure.gravatar.com:443 (DIRECT)
+	139417	HTTP2_SESSION	clients4.google.com:443 (DIRECT)
+138951: HTTP2_SESSION
+www.fastly.com:443 (DIRECT)
+Start Time: 2016-08-19 06:08:13.817
+
+t=24595 [st=    0] +HTTP2_SESSION  [dt=?]
+                    --> host = "www.fastly.com:443"
+                    --> proxy = "DIRECT"
+t=24595 [st=    0]    HTTP2_SESSION_INITIALIZED
+                      --> protocol = "h2"
+                      --> source_dependency = 138945 (SOCKET)
+t=24595 [st=    0]    HTTP2_SESSION_SEND_SETTINGS
+                      --> settings = ["[id:3 flags:0 value:1000]","[id:4 flags:0 value:6291456]"]
+t=24595 [st=    0]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 15663105
+                      --> window_size = 15728640
+t=24595 [st=    0]    HTTP2_SESSION_SENT_WINDOW_UPDATE_FRAME
+                      --> delta = 15663105
+                      --> stream_id = 0
+t=24595 [st=    0]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /
+                          upgrade-insecure-requests: 1
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 0
+                      --> priority = 0
+                      --> stream_id = 1
+t=24847 [st=  252]    HTTP2_SESSION_RECV_SETTINGS
+                      --> clear_persisted = false
+                      --> host = "www.fastly.com:443"
+t=24847 [st=  252]    HTTP2_SESSION_RECV_SETTING
+                      --> flags = 0
+                      --> id = 3
+                      --> value = 100
+t=24847 [st=  252]    HTTP2_SESSION_UPDATE_STREAMS_SEND_WINDOW_SIZE
+                      --> delta_window_size = 16711681
+t=24847 [st=  252]    HTTP2_SESSION_RECV_SETTING
+                      --> flags = 0
+                      --> id = 4
+                      --> value = 16777216
+t=24853 [st=  258]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:13 GMT
+                          content-encoding: gzip
+                          content-language: en
+                          content-type: text/html; charset=utf-8
+                          link: <https://www.fastly.com/>; rel="canonical",<https://www.fastly.com/>; rel="shortlink"
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          x-generator: Drupal 7 (http://drupal.org)
+                          last-modified: Fri, 19 Aug 2016 01:51:49 GMT
+                          fastly-debug-digest: c33bbb9475b9ab749ce5a9e9135370912e683fff2bd6709c84573502bfaf42d1
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1920-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 50
+                          x-timer: S1471612093.556411,VS0,VE0
+                          vary: Cookie,fastly-ssl,Accept-Encoding
+                          cache-control: max-age=0, private, must-revalidate
+                          strict-transport-security: max-age=31536000
+                          content-length: 9901
+                      --> stream_id = 1
+t=24853 [st=  258]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2282
+                      --> stream_id = 1
+t=24853 [st=  258]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2282
+                      --> window_size = 15726358
+t=24857 [st=  262]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2282
+                      --> window_size = 15728640
+t=24881 [st=  286]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 1
+t=24881 [st=  286]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=24881 [st=  286]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 1
+t=24881 [st=  286]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723122
+t=24883 [st=  288]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15725881
+t=24883 [st=  288]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=24982 [st=  387]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2101
+                      --> stream_id = 1
+t=24982 [st=  387]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2101
+                      --> window_size = 15726539
+t=24982 [st=  387]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 1
+t=24982 [st=  387]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2101
+                      --> window_size = 15728640
+t=25274 [st=  679]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_RZkHofAO3LAPMF6pEtb7v-x2YFzKgx0gRcRCvPnKd-I.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 0
+                      --> priority = 0
+                      --> stream_id = 3
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_mVbAwHFC4teH8QnlrR4HjS3odTpW_y7a4J_ULaUdWmE.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 3
+                      --> priority = 0
+                      --> stream_id = 5
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_L8nyMvOBvYCVaS_rEbghvWyjzIq7ULYrWWcUYtuizds.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 5
+                      --> priority = 0
+                      --> stream_id = 7
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_8_2e-c_roEo56oVE-HbOIT0i0hgdooZXrOoEAxEF1i0.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 7
+                      --> priority = 0
+                      --> stream_id = 9
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_nfGenlHMoeln4Ok2hlGh8u-vfwxI5aLXjt-hYHC9ND4.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 9
+                      --> priority = 0
+                      --> stream_id = 11
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_1iU7cYyTaofbmMhh7y6nNOKGPIGHMjs87PY_qf9Ab10.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 11
+                      --> priority = 0
+                      --> stream_id = 13
+t=25275 [st=  680]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/css/css_T1yTq-8v2fvoN6POI-qGzAPsdrSMlLd51pFU3LgoX7c.css
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: text/css,*/*;q=0.1
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 13
+                      --> priority = 0
+                      --> stream_id = 15
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_MpKfe1sTh5JIVGCZ17DsAuT1rqAC38MLLlkjqjQ1X_k.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 15
+                      --> priority = 0
+                      --> stream_id = 17
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 17
+                      --> priority = 1
+                      --> stream_id = 19
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_vU-iAAhd3rDtYaF56IWCYcsuNq4I0_G9ynfD_6ofNww.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 19
+                      --> priority = 1
+                      --> stream_id = 21
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_daXMO-cV5xchGyXpB_O7YpTdo70GTxlkhGEJFnrfP6M.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 21
+                      --> priority = 1
+                      --> stream_id = 23
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_IZFR-RcF8rq7Q1Q8RGUvmbL3y5eC0BFFmOYuRG_bgGY.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 23
+                      --> priority = 1
+                      --> stream_id = 25
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/js/js_UDubq1JVpV-T-pM9d0nHTZB19i0yl286mi0RqVfyppw.js
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 25
+                      --> priority = 1
+                      --> stream_id = 27
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/logo.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 27
+                      --> priority = 3
+                      --> stream_id = 29
+t=25276 [st=  681]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/gordo.jpg?format=pjpeg
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 29
+                      --> priority = 3
+                      --> stream_id = 31
+t=25277 [st=  682]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/homepage_icons_web_mobile.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 31
+                      --> priority = 3
+                      --> stream_id = 33
+t=25277 [st=  682]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/homepage_icons_streaming.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 33
+                      --> priority = 3
+                      --> stream_id = 35
+t=25277 [st=  682]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/homepage_icons_cloud_security.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 35
+                      --> priority = 3
+                      --> stream_id = 37
+t=25277 [st=  682]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/homepage_icons_technology_platform.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 37
+                      --> priority = 3
+                      --> stream_id = 39
+t=25280 [st=  685]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/default/files/homepage_icons_api.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 39
+                      --> priority = 3
+                      --> stream_id = 41
+t=25280 [st=  685]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/logo_twitter.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 41
+                      --> priority = 3
+                      --> stream_id = 43
+t=25280 [st=  685]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/logo_vogue.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 43
+                      --> priority = 3
+                      --> stream_id = 45
+t=25281 [st=  686]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/logo_kayak.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 45
+                      --> priority = 3
+                      --> stream_id = 47
+t=25281 [st=  686]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/logo_new-relic.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 47
+                      --> priority = 3
+                      --> stream_id = 49
+t=25281 [st=  686]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/logo_vimeo.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 49
+                      --> priority = 3
+                      --> stream_id = 51
+t=25281 [st=  686]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/logo-white.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 51
+                      --> priority = 3
+                      --> stream_id = 53
+t=25524 [st=  929]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:10:42 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 828fbbc49227067fb91b2582d91bd9376334c39fdde3585efd3ffe81eaa63b72
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 50
+                          x-timer: S1471612094.177034,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 75
+                      --> stream_id = 3
+t=25524 [st=  929]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 75
+                      --> stream_id = 3
+t=25524 [st=  929]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -75
+                      --> window_size = 15728565
+t=25524 [st=  929]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 3
+t=25524 [st=  929]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:10:42 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 9c16f54ee0c3d1d92beacffc90ccb9d654e9cd36f6bd44d58ddb2c3da15b01cd
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1924-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 6, 1
+                          x-timer: S1471612094.197997,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 360
+                      --> stream_id = 7
+t=25525 [st=  930]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 360
+                      --> stream_id = 7
+t=25525 [st=  930]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -360
+                      --> window_size = 15728205
+t=25525 [st=  930]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 7
+t=25525 [st=  930]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:10:42 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 1705a763008e4cb5a134cffeafb3e5e976adcf1cd50d9ec5a06fb2390b85e6c5
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1923-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.197992,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 1500
+                      --> stream_id = 5
+t=25525 [st=  930]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1500
+                      --> stream_id = 5
+t=25525 [st=  930]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1500
+                      --> window_size = 15726705
+t=25525 [st=  930]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 5
+t=25527 [st=  932]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 75
+                      --> window_size = 15726780
+t=25528 [st=  933]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 360
+                      --> window_size = 15727140
+t=25528 [st=  933]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1500
+                      --> window_size = 15728640
+t=25580 [st=  985]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:10:49 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: c1e84264fa014ee19eb1d831fb4e163d0b88b53c671b817bd2b184e7f5499d37
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1927-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.219524,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 1133
+                      --> stream_id = 9
+t=25581 [st=  986]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1133
+                      --> stream_id = 9
+t=25581 [st=  986]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1133
+                      --> window_size = 15727507
+t=25581 [st=  986]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 9
+t=25581 [st=  986]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:11:12 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: fd37da91a6562d5f19cd40749994e047bf7722777e507a78f884134580a4723c
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1923-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.247843,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 1033
+                      --> stream_id = 11
+t=25582 [st=  987]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1033
+                      --> stream_id = 11
+t=25582 [st=  987]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1033
+                      --> window_size = 15726474
+t=25582 [st=  987]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 11
+t=25582 [st=  987]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Tue, 16 Aug 2016 21:19:26 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 3bdde906768ffccecefa32db86067f6dd86582de03d4e2c7e2f3c9ff41a289b9
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1920-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 4, 1
+                          x-timer: S1471612094.247857,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 33661
+                      --> stream_id = 13
+t=25582 [st=  987]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2575
+                      --> stream_id = 13
+t=25582 [st=  987]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2575
+                      --> window_size = 15723899
+t=25582 [st=  987]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25582 [st=  987]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15721140
+t=25585 [st=  990]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1133
+                      --> window_size = 15722273
+t=25586 [st=  991]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1033
+                      --> window_size = 15723306
+t=25586 [st=  991]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2575
+                      --> window_size = 15725881
+t=25586 [st=  991]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25648 [st= 1053]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25648 [st= 1053]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25649 [st= 1054]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25649 [st= 1054]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723122
+t=25651 [st= 1056]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15725881
+t=25651 [st= 1056]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25678 [st= 1083]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25678 [st= 1083]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25679 [st= 1084]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 13
+t=25679 [st= 1084]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15723292
+t=25680 [st= 1085]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 184
+                      --> stream_id = 13
+t=25680 [st= 1085]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -184
+                      --> window_size = 15723108
+t=25680 [st= 1085]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2566
+                      --> stream_id = 13
+t=25680 [st= 1085]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2566
+                      --> window_size = 15720542
+t=25680 [st= 1085]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25680 [st= 1085]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15717783
+t=25682 [st= 1087]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15720542
+t=25682 [st= 1087]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15723131
+t=25682 [st= 1087]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 184
+                      --> window_size = 15723315
+t=25682 [st= 1087]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2566
+                      --> window_size = 15725881
+t=25682 [st= 1087]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25692 [st= 1097]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25692 [st= 1097]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25693 [st= 1098]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25702 [st= 1107]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25702 [st= 1107]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25705 [st= 1110]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25742 [st= 1147]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 13
+t=25742 [st= 1147]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25743 [st= 1148]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2782
+                      --> stream_id = 13
+t=25743 [st= 1148]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2782
+                      --> window_size = 15723099
+t=25743 [st= 1148]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 893
+                      --> stream_id = 13
+t=25743 [st= 1148]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -893
+                      --> window_size = 15722206
+t=25743 [st= 1148]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 13
+t=25743 [st= 1148]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15724965
+t=25743 [st= 1148]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2782
+                      --> window_size = 15727747
+t=25743 [st= 1148]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 893
+                      --> window_size = 15728640
+t=25744 [st= 1149]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/css
+                          last-modified: Fri, 12 Aug 2016 00:10:43 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 17e9791a1e1a9fb2dd405881c81f976d2340dcba05aadb0ecf69685220d1b387
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1925-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612094.269466,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 607
+                      --> stream_id = 15
+t=25744 [st= 1149]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 607
+                      --> stream_id = 15
+t=25744 [st= 1149]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -607
+                      --> window_size = 15728033
+t=25744 [st= 1149]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 15
+t=25745 [st= 1150]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Fri, 12 Aug 2016 00:10:43 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: b2ef9bfeb6f9400e4a92e2e8aa1176e51d33242a149a73af11b798cbabd498c0
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1922-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 3, 1
+                          x-timer: S1471612094.269488,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 39224
+                      --> stream_id = 17
+t=25745 [st= 1150]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2600
+                      --> stream_id = 17
+t=25745 [st= 1150]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2600
+                      --> window_size = 15725433
+t=25749 [st= 1154]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 607
+                      --> window_size = 15726040
+t=25750 [st= 1155]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2600
+                      --> window_size = 15728640
+t=25792 [st= 1197]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25792 [st= 1197]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25793 [st= 1198]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25793 [st= 1198]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723122
+t=25795 [st= 1200]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15725881
+t=25795 [st= 1200]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25878 [st= 1283]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25878 [st= 1283]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25879 [st= 1284]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25884 [st= 1289]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25884 [st= 1289]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25885 [st= 1290]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25885 [st= 1290]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 17
+t=25885 [st= 1290]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15726051
+t=25886 [st= 1291]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15728640
+t=25886 [st= 1291]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 159
+                      --> stream_id = 17
+t=25886 [st= 1291]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -159
+                      --> window_size = 15728481
+t=25887 [st= 1292]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2591
+                      --> stream_id = 17
+t=25887 [st= 1292]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2591
+                      --> window_size = 15725890
+t=25891 [st= 1296]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 159
+                      --> window_size = 15726049
+t=25891 [st= 1296]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2591
+                      --> window_size = 15728640
+t=25929 [st= 1334]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25929 [st= 1334]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25931 [st= 1336]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25931 [st= 1336]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25931 [st= 1336]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25931 [st= 1336]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25932 [st= 1337]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25932 [st= 1337]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25933 [st= 1338]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25944 [st= 1349]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 17
+t=25944 [st= 1349]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=25945 [st= 1350]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=25945 [st= 1350]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 17
+t=25946 [st= 1351]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15726051
+t=25946 [st= 1351]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15728640
+t=25947 [st= 1352]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 168
+                      --> stream_id = 17
+t=25947 [st= 1352]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -168
+                      --> window_size = 15728472
+t=25947 [st= 1352]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2582
+                      --> stream_id = 17
+t=25947 [st= 1352]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2582
+                      --> window_size = 15725890
+t=25949 [st= 1354]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 168
+                      --> window_size = 15726058
+t=25949 [st= 1354]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2582
+                      --> window_size = 15728640
+t=26013 [st= 1418]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3874
+                      --> stream_id = 17
+t=26013 [st= 1418]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3874
+                      --> window_size = 15724766
+t=26013 [st= 1418]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 17
+t=26013 [st= 1418]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3874
+                      --> window_size = 15728640
+t=26013 [st= 1418]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Fri, 12 Aug 2016 00:11:12 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 52ce884ddcb8b7adb7140a0e06dc0ec0cfef8351f52f15df9c7e5cb8d6f16c59
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1927-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 6
+                          x-timer: S1471612094.290502,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 1345
+                      --> stream_id = 19
+t=26014 [st= 1419]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1345
+                      --> stream_id = 19
+t=26014 [st= 1419]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1345
+                      --> window_size = 15727295
+t=26014 [st= 1419]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 19
+t=26014 [st= 1419]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Mon, 15 Aug 2016 16:59:52 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 2c5713ec24676383635da4ad0cea2e606f5a1f87be1d72bcfc73db7326e34dff
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.290513,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 19864
+                      --> stream_id = 25
+t=26014 [st= 1419]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Tue, 16 Aug 2016 21:21:16 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 4b3de7c674ebc47a02cb086cc2c843be358cf16e85b80a5f7291f11d1166853b
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1925-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.290479,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 20208
+                      --> stream_id = 23
+t=26015 [st= 1420]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 5167
+                      --> stream_id = 23
+t=26015 [st= 1420]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -5167
+                      --> window_size = 15722128
+t=26018 [st= 1423]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1345
+                      --> window_size = 15723473
+t=26019 [st= 1424]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 5167
+                      --> window_size = 15728640
+t=26047 [st= 1452]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 23
+t=26047 [st= 1452]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26048 [st= 1453]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 23
+t=26048 [st= 1453]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723122
+t=26050 [st= 1455]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15725881
+t=26050 [st= 1455]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26088 [st= 1493]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 23
+t=26088 [st= 1493]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26089 [st= 1494]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26111 [st= 1516]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 23
+t=26111 [st= 1516]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15726051
+t=26112 [st= 1517]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 351
+                      --> stream_id = 23
+t=26112 [st= 1517]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -351
+                      --> window_size = 15725700
+t=26112 [st= 1517]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2399
+                      --> stream_id = 23
+t=26112 [st= 1517]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2399
+                      --> window_size = 15723301
+t=26112 [st= 1517]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1425
+                      --> stream_id = 23
+t=26112 [st= 1517]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1425
+                      --> window_size = 15721876
+t=26112 [st= 1517]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 23
+t=26113 [st= 1518]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15724465
+t=26113 [st= 1518]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 351
+                      --> window_size = 15724816
+t=26113 [st= 1518]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2399
+                      --> window_size = 15727215
+t=26113 [st= 1518]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1425
+                      --> window_size = 15728640
+t=26113 [st= 1518]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1325
+                      --> stream_id = 25
+t=26113 [st= 1518]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1325
+                      --> window_size = 15727315
+t=26114 [st= 1519]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 25
+t=26114 [st= 1519]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15724556
+t=26115 [st= 1520]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1325
+                      --> window_size = 15725881
+t=26115 [st= 1520]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26218 [st= 1623]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 25
+t=26218 [st= 1623]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26219 [st= 1624]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 25
+t=26219 [st= 1624]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723122
+t=26220 [st= 1625]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 25
+t=26220 [st= 1625]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15720533
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 25
+t=26221 [st= 1626]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15717774
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1434
+                      --> stream_id = 25
+t=26221 [st= 1626]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1434
+                      --> window_size = 15716340
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3480
+                      --> stream_id = 25
+t=26221 [st= 1626]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3480
+                      --> window_size = 15712860
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 25
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15715619
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15718378
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15720967
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15723726
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1434
+                      --> window_size = 15725160
+t=26221 [st= 1626]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3480
+                      --> window_size = 15728640
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Tue, 26 Jul 2016 18:17:47 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 7a5647f6f5a49bd55bb34b019c519abee89a74420772efb03250ea57254ca32b
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1926-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612094.290497,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 2870
+                      --> stream_id = 21
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2870
+                      --> stream_id = 21
+t=26221 [st= 1626]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2870
+                      --> window_size = 15725770
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 21
+t=26221 [st= 1626]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: ab4616dac7b20ec7595d90f156c04d26bb07df9b72089dfd70439c6318a5b30a
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1923-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 3, 1
+                          x-timer: S1471612094.312290,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 3658
+                      --> stream_id = 29
+t=26222 [st= 1627]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 12
+                      --> stream_id = 29
+t=26222 [st= 1627]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -12
+                      --> window_size = 15725758
+t=26222 [st= 1627]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2537
+                      --> stream_id = 29
+t=26222 [st= 1627]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2537
+                      --> window_size = 15723221
+t=26223 [st= 1628]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2870
+                      --> window_size = 15726091
+t=26227 [st= 1632]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 12
+                      --> window_size = 15726103
+t=26227 [st= 1632]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2537
+                      --> window_size = 15728640
+t=26238 [st= 1643]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1109
+                      --> stream_id = 29
+t=26238 [st= 1643]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1109
+                      --> window_size = 15727531
+t=26238 [st= 1643]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 29
+t=26239 [st= 1644]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1109
+                      --> window_size = 15728640
+t=26239 [st= 1644]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/jpeg
+                          fastly-stats: io=1
+                          last-modified: Tue, 09 Aug 2016 00:50:57 GMT
+                          via: 1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          accept-ranges: bytes
+                          x-served-by: cache-atl6246-ATL
+                          x-cache: HIT
+                          x-cache-hits: 1
+                          x-timer: S1471612094.312308,VS0,VE0
+                          vary: Accept
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 52541
+                      --> stream_id = 31
+t=26240 [st= 1645]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 07 Jan 2016 08:34:55 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 7fdbaf16b5178045bb0880b7d20f87ad5b0b3ce7922ce146e10ea4c9a4c150e1
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.312305,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 2647
+                      --> stream_id = 33
+t=26240 [st= 1645]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-encoding: gzip
+                          content-type: text/javascript
+                          last-modified: Mon, 15 Aug 2016 17:36:30 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 4443f2b36c2e6963ea4df92fe0e89a5c5619429de656ba0a4b0b61c42c338ef6
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1924-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.312297,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=31536000, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 20965
+                      --> stream_id = 27
+t=26241 [st= 1646]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2280
+                      --> stream_id = 27
+t=26241 [st= 1646]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2280
+                      --> window_size = 15726360
+t=26241 [st= 1646]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 27
+t=26241 [st= 1646]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15723601
+t=26241 [st= 1646]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 27
+t=26241 [st= 1646]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15720842
+t=26243 [st= 1648]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2280
+                      --> window_size = 15723122
+t=26243 [st= 1648]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15725881
+t=26243 [st= 1648]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26243 [st= 1648]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 27
+t=26243 [st= 1648]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26244 [st= 1649]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26266 [st= 1671]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 27
+t=26266 [st= 1671]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26267 [st= 1672]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 27
+t=26267 [st= 1672]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15723292
+t=26268 [st= 1673]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 479
+                      --> stream_id = 27
+t=26268 [st= 1673]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -479
+                      --> window_size = 15722813
+t=26268 [st= 1673]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2271
+                      --> stream_id = 27
+t=26268 [st= 1673]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2271
+                      --> window_size = 15720542
+t=26269 [st= 1674]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15723301
+t=26270 [st= 1675]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15725890
+t=26270 [st= 1675]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 479
+                      --> window_size = 15726369
+t=26270 [st= 1675]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2271
+                      --> window_size = 15728640
+t=26276 [st= 1681]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2310
+                      --> stream_id = 27
+t=26276 [st= 1681]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2310
+                      --> window_size = 15726330
+t=26276 [st= 1681]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 27
+t=26276 [st= 1681]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2310
+                      --> window_size = 15728640
+t=26276 [st= 1681]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 440
+                      --> stream_id = 31
+t=26276 [st= 1681]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -440
+                      --> window_size = 15728200
+t=26277 [st= 1682]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 31
+t=26277 [st= 1682]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725441
+t=26279 [st= 1684]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 440
+                      --> window_size = 15725881
+t=26279 [st= 1684]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26284 [st= 1689]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 31
+t=26284 [st= 1689]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26285 [st= 1690]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26290 [st= 1695]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2759
+                      --> stream_id = 31
+t=26290 [st= 1695]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2759
+                      --> window_size = 15725881
+t=26292 [st= 1697]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2759
+                      --> window_size = 15728640
+t=26312 [st= 1717]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2589
+                      --> stream_id = 31
+t=26312 [st= 1717]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2589
+                      --> window_size = 15726051
+t=26313 [st= 1718]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2589
+                      --> window_size = 15728640
+t=26469 [st= 1874]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 5078
+                      --> stream_id = 31
+t=26469 [st= 1874]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -5078
+                      --> window_size = 15723562
+t=26469 [st= 1874]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3105
+                      --> stream_id = 31
+t=26469 [st= 1874]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3105
+                      --> window_size = 15720457
+t=26469 [st= 1874]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 8192
+                      --> stream_id = 31
+t=26469 [st= 1874]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -8192
+                      --> window_size = 15712265
+t=26471 [st= 1876]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 5078
+                      --> window_size = 15717343
+t=26471 [st= 1876]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3105
+                      --> window_size = 15720448
+t=26471 [st= 1876]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 8192
+                      --> window_size = 15728640
+t=26472 [st= 1877]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 5087
+                      --> stream_id = 31
+t=26472 [st= 1877]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -5087
+                      --> window_size = 15723553
+t=26472 [st= 1877]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3096
+                      --> stream_id = 31
+t=26472 [st= 1877]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3096
+                      --> window_size = 15720457
+t=26472 [st= 1877]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 8192
+                      --> stream_id = 31
+t=26472 [st= 1877]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -8192
+                      --> window_size = 15712265
+t=26474 [st= 1879]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 5087
+                      --> window_size = 15717352
+t=26474 [st= 1879]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3096
+                      --> window_size = 15720448
+t=26474 [st= 1879]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 8192
+                      --> window_size = 15728640
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 5096
+                      --> stream_id = 31
+t=26475 [st= 1880]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -5096
+                      --> window_size = 15723544
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3087
+                      --> stream_id = 31
+t=26475 [st= 1880]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3087
+                      --> window_size = 15720457
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 302
+                      --> stream_id = 31
+t=26475 [st= 1880]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -302
+                      --> window_size = 15720155
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 31
+t=26475 [st= 1880]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 5096
+                      --> window_size = 15725251
+t=26475 [st= 1880]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3087
+                      --> window_size = 15728338
+t=26475 [st= 1880]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 302
+                      --> window_size = 15728640
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2647
+                      --> stream_id = 33
+t=26475 [st= 1880]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2647
+                      --> window_size = 15725993
+t=26475 [st= 1880]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 33
+t=26475 [st= 1880]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2647
+                      --> window_size = 15728640
+t=26499 [st= 1904]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 07 Jan 2016 08:35:22 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 4b40132cfb26680f22892da0a37e090df928605e274618c34c87a2db48e92bdf
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1920-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.358312,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 7853
+                      --> stream_id = 35
+t=26499 [st= 1904]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 7853
+                      --> stream_id = 35
+t=26499 [st= 1904]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -7853
+                      --> window_size = 15720787
+t=26499 [st= 1904]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 35
+t=26499 [st= 1904]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 07 Jan 2016 08:35:50 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 7f21f2cdb91f4e76b91eff7bf564acaabd00ac8c161c278a6053ae678ccc182b
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1927-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.358372,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 6777
+                      --> stream_id = 37
+t=26499 [st= 1904]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 6777
+                      --> stream_id = 37
+t=26500 [st= 1905]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -6777
+                      --> window_size = 15714010
+t=26500 [st= 1905]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 37
+t=26502 [st= 1907]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 7853
+                      --> window_size = 15721863
+t=26502 [st= 1907]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 6777
+                      --> window_size = 15728640
+t=26576 [st= 1981]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 07 Jan 2016 08:36:33 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: b4278a1b4d800e9adc2af3d183d9c688a304c8ff8ca17d22399bf93488983f69
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1926-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.416720,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 3473
+                      --> stream_id = 41
+t=26576 [st= 1981]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 8dcaefdd8ae968a64dc73041a983778204f0b3fba675fa237ed8d87b52ab8cc8
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.416688,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 5424
+                      --> stream_id = 45
+t=26576 [st= 1981]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3473
+                      --> stream_id = 41
+t=26576 [st= 1981]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3473
+                      --> window_size = 15725167
+t=26576 [st= 1981]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 41
+t=26576 [st= 1981]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 4394
+                      --> stream_id = 45
+t=26576 [st= 1981]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -4394
+                      --> window_size = 15720773
+t=26577 [st= 1982]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1030
+                      --> stream_id = 45
+t=26577 [st= 1982]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1030
+                      --> window_size = 15719743
+t=26577 [st= 1982]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 45
+t=26578 [st= 1983]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3473
+                      --> window_size = 15723216
+t=26580 [st= 1985]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 4394
+                      --> window_size = 15727610
+t=26580 [st= 1985]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1030
+                      --> window_size = 15728640
+t=26620 [st= 2025]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 4c0d863f0d241dd89479849684275ea920cfa9cb9106582318c85ebe4312400f
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1926-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.416660,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 8109
+                      --> stream_id = 49
+t=26621 [st= 2026]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 6d3813ad2d7e989d9dae59ec7e451b617abc058d38cc79bad48cddb781e252b1
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: MISS, HIT
+                          x-cache-hits: 0, 1
+                          x-timer: S1471612094.416708,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 3710
+                      --> stream_id = 43
+t=26621 [st= 2026]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Tue, 26 Jul 2016 18:16:27 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 1abc90629c93599c77f8af500f6dfbea91fe7cce04be4dce7a1c4c904545c109
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1926-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.416705,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 8517
+                      --> stream_id = 53
+t=26621 [st= 2026]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 89ad64ab189e6d73e1e73d05b23aa04b5a7493fba619614a8aa1c418008946c3
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1923-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612094.416715,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 10087
+                      --> stream_id = 51
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 07 Jan 2016 08:36:14 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 530d56dfe8cf1f8b4cfb6c6a73950de46b329967d43856c12be33dfccd114364
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612094.416710,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 6326
+                      --> stream_id = 39
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:14 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 0943ebe545998efe6135aa571b79bec5f5ad5973a89b8079e248cb02ce8680f6
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1920-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612094.416686,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 13843
+                      --> stream_id = 47
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 6326
+                      --> stream_id = 39
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -6326
+                      --> window_size = 15722314
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 39
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1003
+                      --> stream_id = 43
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1003
+                      --> window_size = 15721311
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2707
+                      --> stream_id = 43
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2707
+                      --> window_size = 15718604
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 43
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 5476
+                      --> stream_id = 47
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -5476
+                      --> window_size = 15713128
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 8192
+                      --> stream_id = 47
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -8192
+                      --> window_size = 15704936
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 175
+                      --> stream_id = 47
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -175
+                      --> window_size = 15704761
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 47
+t=26622 [st= 2027]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 8008
+                      --> stream_id = 49
+t=26622 [st= 2027]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -8008
+                      --> window_size = 15696753
+t=26625 [st= 2030]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 8008
+                      --> window_size = 15704761
+t=26627 [st= 2032]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1003
+                      --> window_size = 15705764
+t=26627 [st= 2032]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2707
+                      --> window_size = 15708471
+t=26628 [st= 2033]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 6326
+                      --> window_size = 15714797
+t=26630 [st= 2035]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 5476
+                      --> window_size = 15720273
+t=26630 [st= 2035]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 8192
+                      --> window_size = 15728465
+t=26630 [st= 2035]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 175
+                      --> window_size = 15728640
+t=26632 [st= 2037]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 101
+                      --> stream_id = 49
+t=26632 [st= 2037]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -101
+                      --> window_size = 15728539
+t=26632 [st= 2037]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 49
+t=26632 [st= 2037]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 101
+                      --> window_size = 15728640
+t=26632 [st= 2037]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 8082
+                      --> stream_id = 51
+t=26632 [st= 2037]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -8082
+                      --> window_size = 15720558
+t=26632 [st= 2037]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2005
+                      --> stream_id = 51
+t=26632 [st= 2037]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2005
+                      --> window_size = 15718553
+t=26632 [st= 2037]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 51
+t=26632 [st= 2037]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 8082
+                      --> window_size = 15726635
+t=26632 [st= 2037]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2005
+                      --> window_size = 15728640
+t=26633 [st= 2038]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 6178
+                      --> stream_id = 53
+t=26633 [st= 2038]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -6178
+                      --> window_size = 15722462
+t=26633 [st= 2038]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2339
+                      --> stream_id = 53
+t=26633 [st= 2038]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2339
+                      --> window_size = 15720123
+t=26633 [st= 2038]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 53
+t=26633 [st= 2038]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 6178
+                      --> window_size = 15726301
+t=26633 [st= 2038]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2339
+                      --> window_size = 15728640
+t=27017 [st= 2422]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/icons/icon_cta-arrow.svg
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/sites/default/files/css/css_1iU7cYyTaofbmMhh7y6nNOKGPIGHMjs87PY_qf9Ab10.css
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 0
+                      --> priority = 3
+                      --> stream_id = 55
+t=27017 [st= 2422]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/bg_tachometer.svg
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/sites/default/files/css/css_1iU7cYyTaofbmMhh7y6nNOKGPIGHMjs87PY_qf9Ab10.css
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 55
+                      --> priority = 3
+                      --> stream_id = 57
+t=27017 [st= 2422]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/img/icons/sprite_social.svg
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/sites/default/files/css/css_1iU7cYyTaofbmMhh7y6nNOKGPIGHMjs87PY_qf9Ab10.css
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 57
+                      --> priority = 3
+                      --> stream_id = 59
+t=27202 [st= 2607]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:15 GMT
+                          content-type: image/svg+xml
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          content-encoding: gzip
+                          fastly-debug-digest: 82844cd3d13f59f4bb5c14f84336cfb087c7dcfb6023f93ecca327791d7f97e9
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1925-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612095.918031,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 568
+                      --> stream_id = 55
+t=27202 [st= 2607]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 568
+                      --> stream_id = 55
+t=27202 [st= 2607]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -568
+                      --> window_size = 15728072
+t=27202 [st= 2607]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 55
+t=27206 [st= 2611]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 568
+                      --> window_size = 15728640
+t=27253 [st= 2658]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/logo_retina.png?width=260
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: image/webp,image/*,*/*;q=0.8
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 59
+                      --> priority = 3
+                      --> stream_id = 61
+t=27395 [st= 2800]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:15 GMT
+                          content-type: image/svg+xml
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          content-encoding: gzip
+                          fastly-debug-digest: 9f0c9b39d25e0ea02359dd1e50591439a74c8038c524183a500f485665ca0a91
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1923-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612095.987498,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 2758
+                      --> stream_id = 57
+t=27396 [st= 2801]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2758
+                      --> stream_id = 57
+t=27396 [st= 2801]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2758
+                      --> window_size = 15725882
+t=27396 [st= 2801]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 57
+t=27396 [st= 2801]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:15 GMT
+                          content-type: image/svg+xml
+                          last-modified: Tue, 26 Jul 2016 18:16:27 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          content-encoding: gzip
+                          fastly-debug-digest: 9248ca262972714e656341896ac0004c2b9d5bdeb411c44ffc6fe7410534565f
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1924-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612095.987511,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 1443
+                      --> stream_id = 59
+t=27397 [st= 2802]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 1443
+                      --> stream_id = 59
+t=27397 [st= 2802]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -1443
+                      --> window_size = 15724439
+t=27397 [st= 2802]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 59
+t=27402 [st= 2807]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2758
+                      --> window_size = 15727197
+t=27403 [st= 2808]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 1443
+                      --> window_size = 15728640
+t=27748 [st= 3153]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:16 GMT
+                          content-type: image/png
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 3f6fcfc6c84476440f32c544a24ad3d43d8515cc80e08e8ef3516ff06627b482
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1927-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 37, 1
+                          x-timer: S1471612096.427639,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 3658
+                      --> stream_id = 61
+t=27748 [st= 3153]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 3658
+                      --> stream_id = 61
+t=27748 [st= 3153]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -3658
+                      --> window_size = 15724982
+t=27748 [st= 3153]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 61
+t=27755 [st= 3160]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 3658
+                      --> window_size = 15728640
+t=34854 [st=10259]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /sites/all/themes/custom/fastly2016/favicon.ico
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 0
+                      --> priority = 1
+                      --> stream_id = 63
+t=34980 [st=10385]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:23 GMT
+                          content-type: image/x-icon
+                          last-modified: Thu, 28 Jan 2016 08:40:21 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          content-encoding: gzip
+                          fastly-debug-digest: fb744336fa9fe5677ee442cf513afb6fd822be8e8294613272f3dc59312bff1f
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1921-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 1, 1
+                          x-timer: S1471612103.697032,VS0,VE0
+                          vary: Accept-Encoding
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 2380
+                      --> stream_id = 63
+t=34980 [st=10385]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2380
+                      --> stream_id = 63
+t=34980 [st=10385]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2380
+                      --> window_size = 15726260
+t=34980 [st=10385]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 63
+t=34982 [st=10387]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2380
+                      --> window_size = 15728640
+t=34988 [st=10393]    HTTP2_SESSION_SEND_HEADERS
+                      --> exclusive = true
+                      --> fin = true
+                      --> has_priority = true
+                      --> :method: GET
+                          :authority: www.fastly.com
+                          :scheme: https
+                          :path: /favicon.png
+                          user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+                          accept: */*
+                          referer: https://www.fastly.com/
+                          accept-encoding: gzip, deflate, sdch, br
+                          accept-language: en-US,en;q=0.8,fr;q=0.6,es;q=0.4
+                          cookie: [40 bytes were stripped]
+                      --> parent_stream_id = 0
+                      --> priority = 1
+                      --> stream_id = 65
+t=35094 [st=10499]    HTTP2_SESSION_RECV_HEADERS
+                      --> fin = false
+                      --> :status: 200
+                          date: Fri, 19 Aug 2016 13:08:23 GMT
+                          content-type: image/png
+                          last-modified: Wed, 01 Jun 2016 16:25:07 GMT
+                          via: 1.1 varnish1.1 varnish1.1 varnish
+                          x-content-type-options: nosniff
+                          fastly-debug-digest: 27d90de6600aff5e7cb2a65a22ddbad742ccc737451356c950c99614787d166a
+                          accept-ranges: bytes
+                          x-served-by: cache-sea1924-SEA, cache-atl6246-ATL
+                          x-cache: HIT, HIT
+                          x-cache-hits: 2, 1
+                          x-timer: S1471612103.796863,VS0,VE0
+                          cache-control: max-age=86400, public
+                          strict-transport-security: max-age=31536000
+                          content-length: 3524
+                      --> stream_id = 65
+t=35094 [st=10499]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 2596
+                      --> stream_id = 65
+t=35094 [st=10499]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -2596
+                      --> window_size = 15726044
+t=35096 [st=10501]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 2596
+                      --> window_size = 15728640
+t=35225 [st=10630]    HTTP2_SESSION_RECV_DATA
+                      --> fin = false
+                      --> size = 928
+                      --> stream_id = 65
+t=35225 [st=10630]    HTTP2_SESSION_UPDATE_RECV_WINDOW
+                      --> delta = -928
+                      --> window_size = 15727712
+t=35225 [st=10630]    HTTP2_SESSION_RECV_DATA
+                      --> fin = true
+                      --> size = 0
+                      --> stream_id = 65
+t=35225 [st=10630]    HTTP2_STREAM_UPDATE_RECV_WINDOW
+                      --> delta = 928
+                      --> window_size = 15728640
