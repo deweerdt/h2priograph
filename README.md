@@ -22,5 +22,5 @@ that's needed to build h2priograph.
 
  # Sample graph
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Sample graph](https://github.com/deweerdt/h2priograph/blob/master/sample/fastly.png)
 
