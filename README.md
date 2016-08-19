@@ -9,7 +9,7 @@ Chrome depend on each other.
 In addition to having `go` installed, running `make` should be all
 that's needed to build h2priograph.
 
-# Example
+# Usage
 
 - Navigate to a given HTTP/2 connection under chrome://net-internals/#http2
 - Select all and copy, `ctrl-A` followed by `ctrl-C`
@@ -20,7 +20,7 @@ that's needed to build h2priograph.
 - Generate an image (requires `dot` from `graphviz`)
   `dot -Tpng fastly.dot > fastly.png`
 
- # Sample graph
+# Sample graph
 
 ![Sample graph](https://github.com/deweerdt/h2priograph/blob/master/sample/fastly.png)
 
