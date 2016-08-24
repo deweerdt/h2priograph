@@ -14,7 +14,7 @@ that's needed to build h2priograph.
 - Navigate to a given HTTP/2 connection under chrome://net-internals/#http2
 - Select all and copy, `ctrl-A` followed by `ctrl-C`
 - Paste the contents to a file:
-  On MacOSX: `pbpaster > fastly`
+  On MacOSX: `pbpaste > fastly`
 - Generate the dot file:
   `h2priograph -file=fastly > fastly.dot`
 - Generate an image (requires `dot` from `graphviz`)
