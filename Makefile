@@ -3,4 +3,4 @@ h2priograph: src/h2priograph/h2priograph.go checkgh
 
 .PHONY=checkgh
 checkgh:
-	[ -e src/github.com/lucasb-eyer/go-colorful/ ] || (go get github.com/lucasb-eyer/go-colorful)
+	[ -e src/github.com/lucasb-eyer/go-colorful/ ] || (export GOPATH=$(shell pwd); go get github.com/lucasb-eyer/go-colorful)
