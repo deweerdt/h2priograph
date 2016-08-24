@@ -36,6 +36,12 @@ func isbrowny(l, a, b float64) bool {
 	h, c, L := colorful.LabToHcl(l, a, b)
 	return h > 250.0 && c > 0.5 && L > 0.5
 }
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
 func main() {
 	var file = flag.String("file", "", "filename")
 
@@ -104,6 +110,16 @@ func main() {
 				s.parent_sid = nr
 				continue
 			}
+			i = strings.Index(line, "weight = ")
+			if i > 0 {
+				nr, err := strconv.Atoi(line[i+9:])
+				if err != nil {
+					println(fmt.Sprintf("cannot parse weight: %s, line: %d", line, line_nr))
+					os.Exit(0)
+				}
+				s.priority = nr
+				continue
+			}
 			i = strings.Index(line, "priority = ")
 			if i > 0 {
 				nr, err := strconv.Atoi(line[i+11:])
@@ -159,9 +175,9 @@ func main() {
 		}
 		label := s.extension
 		if label == "" {
-			label = s.url
+			label = s.url[:min(len(s.base), 40)]
 		}
-		label = fmt.Sprintf("%s - %d - %s - %d", s.base, s.sid, label, s.priority)
+		label = fmt.Sprintf("%s - sid:%d - %s - %d", s.base[:min(len(s.base), 40)], s.sid, label, s.priority)
 		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\"];\n", s.sid, label, ColorToString(c))
 		fmt.Printf("%d -> %d;\n", s.parent_sid, s.sid)
 	}
