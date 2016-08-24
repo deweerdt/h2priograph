@@ -16,7 +16,7 @@ that's needed to build h2priograph.
 - Paste the contents to a file:
   On MacOSX: `pbpaste > fastly`
 - Generate the dot file:
-  `h2priograph -file=fastly > fastly.dot`
+  `h2priograph -file fastly > fastly.dot`
 - Generate an image (requires `dot` from `graphviz`)
   `dot -Tpng fastly.dot > fastly.png`
 
