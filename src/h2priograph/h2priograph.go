@@ -9,6 +9,8 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"github.com/lucasb-eyer/go-colorful"
 )
 
 const (
@@ -23,30 +25,17 @@ type Stream struct {
 	sid        int
 	url        string
 	extension  string
+	base       string
 }
 
-type Color struct {
-	red, green, blue int
+func ColorToString(c colorful.Color) string {
+	return fmt.Sprintf("%f %f %f", c.R, c.G, c.B)
 }
 
-func (c *Color) String() string {
-	return fmt.Sprintf("%f %f %f", float64(c.red)/255, float64(c.green)/256, float64(c.blue)/256)
+func isbrowny(l, a, b float64) bool {
+	h, c, L := colorful.LabToHcl(l, a, b)
+	return h > 250.0 && c > 0.5 && L > 0.5
 }
-func getRandColor(mix *Color) *Color {
-	red := 255 - 128 + rand.Int()%128
-	green := 255 - 32 + rand.Int()%32
-	blue := 255 - 64 + rand.Int()%64
-
-	// mix the color
-	if mix != nil {
-		red = (red + mix.red) / 2
-		green = (green + mix.green) / 2
-		blue = (blue + mix.blue) / 2
-	}
-
-	return &Color{red, green, blue}
-}
-
 func main() {
 	var file = flag.String("file", "", "filename")
 
@@ -90,6 +79,7 @@ func main() {
 			i = strings.Index(line, ":path: ")
 			if i > 0 {
 				s.url = line[i+7:]
+				s.base = filepath.Base(s.url)
 				s.extension = filepath.Ext(s.url)
 				if len(s.extension) > 1 {
 					s.extension = s.extension[1:]
@@ -141,20 +131,38 @@ func main() {
 		fmt.Fprintln(os.Stderr, "error:", err)
 		os.Exit(1)
 	}
+	rand.Seed(2)
+
 	fmt.Printf("digraph G {\n")
-	colors := make(map[string]*Color)
+	colors := make(map[string]colorful.Color)
+	extensions_count_h := make(map[string]struct{})
+	extensions_count := 10
+	for _, s := range streams {
+		_, ok := extensions_count_h[s.extension]
+		if !ok {
+			extensions_count++
+			extensions_count_h[s.extension] = struct{}{}
+		}
+	}
+	palette, err := colorful.SoftPaletteEx(extensions_count, colorful.SoftPaletteSettings{isbrowny, 50, true})
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "error:", err)
+		os.Exit(1)
+	}
+
 	for _, s := range streams {
 		c, ok := colors[s.extension]
 		if !ok {
-			c = getRandColor(nil)
+			c = palette[0]
+			palette = palette[1:]
 			colors[s.extension] = c
 		}
 		label := s.extension
 		if label == "" {
 			label = s.url
 		}
-		label = fmt.Sprintf("%s - %d", label, s.priority)
-		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\"];\n", s.sid, label, c.String())
+		label = fmt.Sprintf("%s - %d - %s - %d", s.base, s.sid, label, s.priority)
+		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\"];\n", s.sid, label, ColorToString(c))
 		fmt.Printf("%d -> %d;\n", s.parent_sid, s.sid)
 	}
 	fmt.Printf("}\n")
