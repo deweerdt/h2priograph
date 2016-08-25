@@ -14,9 +14,9 @@ import (
 )
 
 const (
-	OUT_OF_HEADERS = iota
+	OUT = iota
+	IN_RECV_DATA
 	IN_HEADERS
-	HAS_PRIO
 )
 
 type Stream struct {
@@ -26,6 +26,9 @@ type Stream struct {
 	url        string
 	extension  string
 	base       string
+	exclusive  bool
+	done       bool /* set when we find the END_STREAM */
+	children   []*Stream
 }
 
 func ColorToString(c colorful.Color) string {
@@ -42,12 +45,13 @@ func min(a, b int) int {
 	}
 	return a
 }
+
 func main() {
 	var file = flag.String("file", "", "filename")
 
 	flag.Parse()
 
-	state := OUT_OF_HEADERS
+	state := OUT
 	var i int
 	var s *Stream
 	streams := make([]*Stream, 0)
@@ -58,30 +62,73 @@ func main() {
 		println(err.Error())
 		os.Exit(1)
 	}
+
+	/* index streams by id */
+	streams_by_id := make(map[int]*Stream)
+	/* fictious 0 stream */
+	stream0 := &Stream{}
+	streams = append(streams, stream0)
+	streams_by_id[0] = stream0
+	stream0.done = true
+
 	scanner := bufio.NewScanner(f)
+	saw_fin := false
 	for scanner.Scan() {
 		line := scanner.Text()
 		line_nr++
 
+		extractInt := func(match, line string) (int, bool) {
+			i := strings.Index(line, match)
+			if i > 0 {
+				nr, err := strconv.Atoi(line[i+len(match):])
+				if err != nil {
+					println(fmt.Sprintf("cannot parse %s: %s, line: %d", match, line, line_nr))
+					os.Exit(0)
+				}
+				return nr, true
+			}
+			return 0, false
+		}
+
 	OOH:
 		switch state {
-		case OUT_OF_HEADERS:
+		case OUT:
 			if strings.HasPrefix(line, "t=") {
 				if strings.Contains(line, "HTTP2_SESSION_SEND_HEADERS") {
 					state = IN_HEADERS
 					s = &Stream{}
 				}
+				if strings.Contains(line, "HTTP2_SESSION_RECV_DATA") {
+					saw_fin = false
+					state = IN_RECV_DATA
+				}
+			}
+		case IN_RECV_DATA:
+			if strings.HasPrefix(line, "t=") {
+				state = OUT
+				goto OOH
+			}
+			i = strings.Index(line, "--> fin = true")
+			if i > 0 {
+				saw_fin = true
+			}
+			i, found := extractInt("--> stream_id = ", line)
+			if found {
+				streams_by_id[i].done = saw_fin
 			}
 		case IN_HEADERS:
 			if strings.HasPrefix(line, "t=") {
-				state = OUT_OF_HEADERS
+				state = OUT
+				if s.exclusive && !streams_by_id[s.parent_sid].done {
+					/* transfer parent's streams to current stream */
+					s.children = streams_by_id[s.parent_sid].children
+					streams_by_id[s.parent_sid].children = []*Stream{s}
+				} else {
+					streams_by_id[s.parent_sid].children = append(streams_by_id[s.parent_sid].children, s)
+				}
 				streams = append(streams, s)
 				goto OOH
 			}
-			if strings.Contains(line, "has_priority = true") {
-				state = HAS_PRIO
-			}
-		case HAS_PRIO:
 			i = strings.Index(line, ":path: ")
 			if i > 0 {
 				s.url = line[i+7:]
@@ -96,48 +143,34 @@ func main() {
 				}
 			}
 			if strings.HasPrefix(line, "t=") {
-				state = OUT_OF_HEADERS
+				state = OUT
 				streams = append(streams, s)
 				goto OOH
 			}
-			i = strings.Index(line, "parent_stream_id = ")
-			if i > 0 {
-				nr, err := strconv.Atoi(line[i+19:])
-				if err != nil {
-					println(fmt.Sprintf("cannot parse parent_stream_id: %s %s, line: %d", line[i+19:], line, line_nr))
-					os.Exit(0)
-				}
-				s.parent_sid = nr
+			i, found := extractInt("parent_stream_id = ", line)
+			if found {
+				s.parent_sid = i
 				continue
 			}
-			i = strings.Index(line, "weight = ")
+			i = strings.Index(line, "exclusive = true")
 			if i > 0 {
-				nr, err := strconv.Atoi(line[i+9:])
-				if err != nil {
-					println(fmt.Sprintf("cannot parse weight: %s, line: %d", line, line_nr))
-					os.Exit(0)
-				}
-				s.priority = nr
+				s.exclusive = true
+			}
+			i, found = extractInt("weight = ", line)
+			if found {
+				s.priority = i
 				continue
 			}
-			i = strings.Index(line, "priority = ")
-			if i > 0 {
-				nr, err := strconv.Atoi(line[i+11:])
-				if err != nil {
-					println(fmt.Sprintf("cannot parse priority: %s, line: %d", line, line_nr))
-					os.Exit(0)
-				}
-				s.priority = nr
+			/* add --> to distinguish from has_priority */
+			i, found = extractInt("--> priority = ", line)
+			if found {
+				s.priority = i
 				continue
 			}
-			i = strings.Index(line, "stream_id = ")
-			if i > 0 {
-				nr, err := strconv.Atoi(line[i+12:])
-				if err != nil {
-					println(fmt.Sprintf("cannot parse stream_id: %s, line: %d", line, line_nr))
-					os.Exit(0)
-				}
-				s.sid = nr
+			i, found = extractInt("--> stream_id = ", line)
+			if found {
+				s.sid = i
+				streams_by_id[s.sid] = s
 				continue
 			}
 		}
@@ -147,6 +180,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "error:", err)
 		os.Exit(1)
 	}
+
 	rand.Seed(2)
 
 	fmt.Printf("digraph G {\n")
@@ -179,7 +213,10 @@ func main() {
 		}
 		label = fmt.Sprintf("%s - sid:%d - %s - %d", s.base[:min(len(s.base), 40)], s.sid, label, s.priority)
 		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\"];\n", s.sid, label, ColorToString(c))
-		fmt.Printf("%d -> %d;\n", s.parent_sid, s.sid)
+		//fmt.Printf("%d -> %d;\n", s.parent_sid, s.sid)
+		for _, c := range s.children {
+			fmt.Printf("%d -> %d;\n", s.sid, c.sid)
+		}
 	}
 	fmt.Printf("}\n")
 	return
