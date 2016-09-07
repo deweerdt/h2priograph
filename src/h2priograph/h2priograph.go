@@ -119,6 +119,7 @@ func main() {
 				if strings.Contains(line, "HTTP2_SESSION_RECV_PUSH_PROMISE") {
 					state = IN_PUSH_PROMISE
 					s = &Stream{}
+					s.priority = 16 /* streams are assigned a default weight of 16 */
 					s.is_push = true
 				}
 			}
