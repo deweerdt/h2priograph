@@ -17,6 +17,7 @@ const (
 	OUT = iota
 	IN_RECV_DATA
 	IN_HEADERS
+	IN_PUSH_PROMISE
 )
 
 type Stream struct {
@@ -27,6 +28,7 @@ type Stream struct {
 	extension  string
 	base       string
 	exclusive  bool
+	is_push    bool
 	done       bool /* set when we find the END_STREAM */
 	children   []*Stream
 }
@@ -46,6 +48,18 @@ func min(a, b int) int {
 	return a
 }
 
+func fillPathInfo(s *Stream, url string) {
+	s.url = url
+	s.base = filepath.Base(s.url)
+	s.extension = filepath.Ext(s.url)
+	if len(s.extension) > 1 {
+		s.extension = s.extension[1:]
+		qm := strings.Index(s.extension, "?")
+		if qm > 0 {
+			s.extension = s.extension[:qm]
+		}
+	}
+}
 func main() {
 	var file = flag.String("file", "", "filename")
 
@@ -102,6 +116,11 @@ func main() {
 					saw_fin = false
 					state = IN_RECV_DATA
 				}
+				if strings.Contains(line, "HTTP2_SESSION_RECV_PUSH_PROMISE") {
+					state = IN_PUSH_PROMISE
+					s = &Stream{}
+					s.is_push = true
+				}
 			}
 		case IN_RECV_DATA:
 			if strings.HasPrefix(line, "t=") {
@@ -115,6 +134,30 @@ func main() {
 			i, found := extractInt("--> stream_id = ", line)
 			if found {
 				streams_by_id[i].done = saw_fin
+			}
+		case IN_PUSH_PROMISE:
+			if strings.HasPrefix(line, "t=") {
+				state = OUT
+				if s.exclusive && !streams_by_id[s.parent_sid].done {
+					/* transfer parent's streams to current stream */
+					s.children = streams_by_id[s.parent_sid].children
+					streams_by_id[s.parent_sid].children = []*Stream{s}
+				} else {
+					streams_by_id[s.parent_sid].children = append(streams_by_id[s.parent_sid].children, s)
+				}
+				streams = append(streams, s)
+				goto OOH
+			}
+			i = strings.Index(line, ":path: ")
+			if i > 0 {
+				fillPathInfo(s, line[i+7:])
+				continue
+			}
+			i, found := extractInt("--> promised_stream_id = ", line)
+			if found {
+				s.sid = i
+				streams_by_id[s.sid] = s
+				continue
 			}
 		case IN_HEADERS:
 			if strings.HasPrefix(line, "t=") {
@@ -131,16 +174,8 @@ func main() {
 			}
 			i = strings.Index(line, ":path: ")
 			if i > 0 {
-				s.url = line[i+7:]
-				s.base = filepath.Base(s.url)
-				s.extension = filepath.Ext(s.url)
-				if len(s.extension) > 1 {
-					s.extension = s.extension[1:]
-					qm := strings.Index(s.extension, "?")
-					if qm > 0 {
-						s.extension = s.extension[:qm]
-					}
-				}
+				fillPathInfo(s, line[i+7:])
+
 			}
 			if strings.HasPrefix(line, "t=") {
 				state = OUT
@@ -212,7 +247,11 @@ func main() {
 			label = s.url[:min(len(s.base), 40)]
 		}
 		label = fmt.Sprintf("%s - sid:%d - %s - %d", s.base[:min(len(s.base), 40)], s.sid, label, s.priority)
-		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\"];\n", s.sid, label, ColorToString(c))
+		shape := "ellipse"
+		if s.is_push {
+			shape = "larrow"
+		}
+		fmt.Printf("%d [style=filled,label=\"%s\", color=\"%s\", shape=\"%s\"];\n", s.sid, label, ColorToString(c), shape)
 		//fmt.Printf("%d -> %d;\n", s.parent_sid, s.sid)
 		for _, c := range s.children {
 			fmt.Printf("%d -> %d;\n", s.sid, c.sid)
